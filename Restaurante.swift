@@ -1,11 +1,4 @@
-//
-//  Restaurante.swift
-//  Restaurantes
-//
-//  Created by Alumno on 9/25/19.
-//  Copyright © 2019 Alumno. All rights reserved.
-//
-
+// Materia.swift
 import Foundation
 
 class Restaurante{

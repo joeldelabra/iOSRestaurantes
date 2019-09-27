@@ -22,12 +22,22 @@ class RestauranteController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let CeldaRestaurant = tableView.dequeueReusableCell(withIdentifier: "CeldaRestaurant")
+        CeldaRestaurant?.textLabel?.text = restaurante[indexPath.row].nombre
+        return CeldaRestaurant!
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+        return restaurante.count
     }
     
+    @IBOutlet weak var TableViewRestaurant: UITableView!
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToRestaurant"
+        {
+            let destino = segue.destination as? DetalleRestaurantController
+            destino?.restaurant = restaurante[TableViewRestaurant.indexPathForSelectedRow!.row]
+        }
+    }
     
 }

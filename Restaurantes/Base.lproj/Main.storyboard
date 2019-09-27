@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detalle Restaurant Controller-->
         <scene sceneID="EGs-4y-Y9S">
             <objects>
-                <viewController id="Jj9-uB-zRG" sceneMemberID="viewController">
+                <viewController id="Jj9-uB-zRG" customClass="DetalleRestaurantController" customModule="Restaurantes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uHP-Mj-bfH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohU-qd-6aM">
-                                <rect key="frame" x="20" y="148" width="227" height="44"/>
+                                <rect key="frame" x="20" y="148" width="374" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NF-bf-fsg">
-                                <rect key="frame" x="20" y="236" width="235" height="21"/>
+                                <rect key="frame" x="20" y="220" width="374" height="37"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NZ-bn-Pjv">
-                                <rect key="frame" x="20" y="301" width="245" height="21"/>
+                                <rect key="frame" x="20" y="301" width="349" height="67"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -81,6 +81,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="otm-kU-RLH"/>
                     </view>
+                    <connections>
+                        <outlet property="lblDescripcion" destination="7NZ-bn-Pjv" id="Hg6-35-h4P"/>
+                        <outlet property="lblDireccion" destination="ohU-qd-6aM" id="l3Q-eK-DZK"/>
+                        <outlet property="lblTelefono" destination="3NF-bf-fsg" id="Ble-mv-kEZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jc7-BY-EDr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,7 +94,7 @@
         <!--H O M E-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="H O M E" id="BYZ-38-t0r" customClass="ViewController" customModule="Restaurantes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="H O M E" id="BYZ-38-t0r" customClass="RestauranteController" customModule="Restaurantes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="HOME">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +103,7 @@
                                 <rect key="frame" x="0.0" y="56" width="414" height="800"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="lTZ-jw-Oy7" detailTextLabel="PGZ-7i-1cu" style="IBUITableViewCellStyleValue1" id="fV7-od-vdp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CeldaRestaurant" textLabel="lTZ-jw-Oy7" detailTextLabel="PGZ-7i-1cu" style="IBUITableViewCellStyleValue1" id="fV7-od-vdp">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fV7-od-vdp" id="uQt-em-Uh5">
@@ -122,10 +127,14 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Jj9-uB-zRG" kind="show" id="TBG-bS-nKp"/>
+                                            <segue destination="Jj9-uB-zRG" kind="show" identifier="GoToRestaurant" id="TBG-bS-nKp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zs6-cw-O1u"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uue-As-m10"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.16667325399531449" green="0.54990568253092309" blue="0.79493199481865284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -138,6 +147,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="RESTAURANTES" id="0K4-7Y-rfj"/>
+                    <connections>
+                        <outlet property="TableViewRestaurant" destination="FSL-xY-xdc" id="D9d-Bw-78P"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
